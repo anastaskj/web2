@@ -1,0 +1,13 @@
+<br>
+<br>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Name"
+            style="width:300px" [(ngModel)]="searchTerm" />
+</div>
+<br>
+<a class="button" routerLink="edit/0">Create new employee</a>
+<router-outlet></router-outlet>
+<div  *ngFor="let employee of employees | employeeFilter:searchTerm"> 
+<app-display-employee [employee]="employee" [searchTerm]="searchTerm"></app-display-employee> 
+</div>
+

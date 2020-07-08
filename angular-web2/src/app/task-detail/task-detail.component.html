@@ -1,0 +1,31 @@
+
+
+<div class = "" *ngIf="task">
+
+    <h2>{{task.name | uppercase}} </h2>
+    <div><span>ID: </span>{{task.id}}</div>
+    <div>
+        <label>Name:
+          <input [(ngModel)]="task.name" placeholder="name">
+        </label>
+
+        <label for="employee">Employee</label>
+        <select id="employee" name="employee" [(ngModel)]="task.employees"
+                class="form-control">
+          <option *ngFor="let employee of employees" [value]="employee.id">
+            {{employee.first_name}}
+          </option>
+        </select>
+    
+
+        <div><span>Department: </span>{{task.department_id}}</div>
+        <div><span>Employee assigned: </span>{{task.employees}}</div>
+        <div><span>Due Date: </span>{{task.due_date}}</div>
+
+    
+
+    <button class = "backBtn" (click)="goBack()">Back</button>
+    <input type="submit" class="btn" value="Edit" (click)="save()">
+    
+     
+  

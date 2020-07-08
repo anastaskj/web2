@@ -1,0 +1,158 @@
+ <link  href="http://fonts.googleapis.com/css?
+family=Reenie+Beanie:regular" 
+rel="stylesheet"
+type="text/css">
+
+<h1>Tasks</h1>
+
+  <input type="text" class="form-control" placeholder="Search By Name"
+          style="width:300px" [(ngModel)]="searchTerm" />
+
+<div>
+<ul class="tasks" >
+  <li *ngFor = "let task of tasks|taskFilter:searchTerm"> 
+      <button class ="myButton" title="delete task"(click)="delete(task)">X</button>
+      <a routerLink="/detail/{{task.id}}">
+       
+    <h2>{{task.name}}</h2>
+  </a>
+ 
+
+
+  </li>
+</ul>
+</div>
+<!-- <div>
+  <h3>Department ID</h3>
+    <input #departmentId />
+ 
+    <h3>Name</h3>
+    <input #name />
+  
+    <h3>Due Date</h3>
+    <input #dueDate /> -->
+
+<!-- <h3>Employee</h3>
+<select #taskAssignedEmpName><option *ngFor = "let employee of employees" >{{employee.name}} </option>
+</select>
+  
+<h3>Department</h3>
+  <select #taskDepartment><option *ngFor = "let department of departments" >{{department.name}} </option>
+  </select> -->
+
+ 
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <!-- <div>
+    <h3>Add</h3>
+  <button  (click)="add(departmentId.value,name.value,
+  dueDate.value);">Add</button>
+</div> -->
+
+
+
+<!-- </div>
+<form #taskForm="ngForm" (ngSubmit)="add(task.name,task.importancy,employee.name,task.deadline,task.department)">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <label for="name" class="control-label">Name</label>
+        <input id="name" type="text" class="form-control" name="name" [(ngModel)]="task.name">
+      </div>
+
+      <div class="form-group">
+        <label for="importancy">Importance</label>
+        <input id="importancy" type="text" class="form-control" name="importancy" [(ngModel)]="task.importancy">
+      </div>
+
+
+      <div class="form-group">
+        <label for="employee">Employees</label>
+        <select id="employee" name="employee" [(ngModel)]="employee.name" class="form-control">
+          <option *ngFor="let employee of listEmployees" [value]="employee.id">
+            {{employee.name}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="deadline">Deadline</label>
+        <input id="deadline" type="text" class="form-control" name="deadline" [(ngModel)]="task.deadline">
+      </div>
+      <div class="form-group">
+        <label for="deadline">Department</label>
+        <input id="deadline" type="text" class="form-control" name="deadline" [(ngModel)]="task.department">
+      </div>
+
+
+
+      
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </div>
+</form>
+Angular Generated Form Model : {{employeeForm.value | json}}
+<br/>
+<br/>
+Our Employee Model : {{employee|json}} -->
+
+<form #employeeForm="ngForm" (ngSubmit)="saveTask()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{panelTitle}}</h3>
+    </div>
+    <!-- <div class="panel-body"> -->
+
+        <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" name="department" [(ngModel)]="task.department_id"
+                    class="form-control">
+              <option *ngFor="let department of departments" [value]="department.id">
+                {{department.name}}
+              </option>
+            </select>
+          </div>
+
+      <div class="form-group">
+        <label for="name" class="control-label">Task Name</label>
+        <input id="name" type="text" class="form-control" name="name"
+        [(ngModel)]="task.name">
+      </div>
+     
+      
+      <div class="form-group">
+        <label for="due_date">Due Date</label>
+        <input id="due_date" name="due_date" [(ngModel)]="task.due_date"
+                type="date" class="form-control" />
+      </div>
+
+  
+<div class="form-group">
+    <label for="employee">Employee</label>
+    <select id="employee" name="employee" [(ngModel)]="task.employees"
+            class="form-control">
+      <option *ngFor="let employee of employees" [value]="employee.id">
+        {{employee.first_name}}
+      </option>
+    </select>
+  </div>
+
+       <!-- <h3>Department</h3>
+  <select #taskDepartment><option *ngFor = "let department of departments"  >{{department.name}} </option>
+  </select> -->
+     
+
+    <div class="panel-footer">
+      <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </div>
+</form>
+
+

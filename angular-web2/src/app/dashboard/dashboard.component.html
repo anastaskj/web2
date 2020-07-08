@@ -1,0 +1,34 @@
+<br>
+<br>
+
+    <h2>Employees</h2>
+    <input type="text" class="form-control" placeholder="Search By Name"
+     style="width:300px" [(ngModel)]="searchTermEmp" />
+    <div class="panel-footer">
+        <button *ngFor="let employee of employees| employeeFilter:searchTermEmp" class="btn btn-primary"
+         routerLink="/list/employees/{{employee.id}}">{{employee.first_name}} {{employee.last_name}}</button>
+      </div>
+      <br>
+      <h2>Departments</h2>
+      <input type="text" class="form-control" placeholder="Search By Name"
+                  style="width:300px" [(ngModel)]="searchTermDep" />
+      <div class="panel-footer">
+          <button *ngFor="let department of departments|departmentFilter:searchTermDep" class="btn btn-primary"
+           routerLink="/department/{{department.id}}">{{department.name}}</button>
+        </div>
+      
+        <br>
+      
+        <h2>Tasks</h2>
+        <input type="text" class="form-control" placeholder="Search By Name"
+        style="width:300px" [(ngModel)]="searchTermTask" />
+      <div class="panel-footer">
+          <button *ngFor="let task of tasks|taskFilter:searchTermTask" class="btn btn-primary"
+           routerLink="/detail/{{task.id}}">{{task.name}}</button>
+        </div>
+
+
+
+  
+  
+

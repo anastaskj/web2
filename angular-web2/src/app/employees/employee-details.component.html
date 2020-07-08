@@ -1,0 +1,114 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{employee.first_name}} {{employee.last_name}}</h3>
+  </div>
+  <div class="panel-body">
+
+    <div class="col-xs-10">
+
+      <div class="row vertical-align">
+
+        <!-- <div class="col-xs-4">
+          <img class="imageClass" [src]="employee.photoPath" />
+        </div> -->
+        <div class="col-xs-8">
+
+          <!-- <div class="row">
+            <div class="col-xs-6">
+              Gender
+            </div>
+            <div class="col-xs-6">
+              : {{employee.gender}}
+            </div>
+          </div> -->
+
+          <div class="row">
+            <div class="col-xs-6">
+              Date of Birth
+            </div>
+            <div class="col-xs-6">
+              : {{employee.birth_date | date}}
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-xs-6">
+                Department
+              </div>
+              <div class="col-xs-6">
+                 <div class="col-xs-6" [ngSwitch]="employee.department_id">
+              <span *ngSwitchCase="377">Software Engineering</span>
+              <span *ngSwitchCase="378">Human Resources</span>
+              <span *ngSwitchCase="379">Student Administration</span>
+              <span *ngSwitchCase="380">ICT and Support</span>
+              <span *ngSwitchCase="381">Sales</span>
+              <span *ngSwitchCase="382">Marketing</span>
+              <span *ngSwitchCase="383"> Economics </span>
+              <span *ngSwitchDefault> N/A </span>
+            </div>
+                : {{employee.department_id}}
+              </div>
+            </div>
+
+          <!-- <div class="row">
+            <div class="col-xs-6">
+              Contact Preference
+            </div>
+            <div class="col-xs-6">
+              : {{employee.contactPreference}}
+            </div>
+          </div> -->
+
+          <!-- <div class="row">
+            <div class="col-xs-6">
+              Phone
+            </div>
+            <div class="col-xs-6">
+              : {{employee.phoneNumber}}
+            </div>
+          </div> -->
+
+          <!-- <div class="row">
+            <div class="col-xs-6">
+              Email
+            </div>
+            <div class="col-xs-6">
+              : {{employee.email}}
+            </div>
+          </div> -->
+
+          <!-- <div class="row">
+            <div class="col-xs-6">
+              Department
+            </div>
+
+            <div class="col-xs-6" [ngSwitch]="employee.department_id">
+              <span *ngSwitchCase="377"> Accounting </span>
+              <span *ngSwitchCase="378"> Management </span>
+              <span *ngSwitchCase="379"> Business </span>
+              <span *ngSwitchCase="380"> Marketing </span>
+              <span *ngSwitchCase="100005"> Finance </span>
+              <span *ngSwitchCase="100006"> Economics </span>
+              <span *ngSwitchDefault> N/A </span>
+            </div>
+
+          </div> -->
+          <!-- <div class="row">
+            <div class="col-xs-6">
+              Is Active
+            </div>
+            <div class="col-xs-6">
+              : {{employee.isActive}}
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <a class="button" routerLink="/list">
+      Back to List
+    </a>
+  </div>

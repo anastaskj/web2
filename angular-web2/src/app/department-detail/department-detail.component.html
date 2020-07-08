@@ -1,0 +1,22 @@
+<div class = "details" *ngIf="department">
+
+	<h2>{{department.name | uppercase}} Details</h2>
+	<div><span>ID: </span>{{department.id}}</div>
+	<div>
+  		<label>Name:
+    		<input [(ngModel)]="department.name" placeholder="name">
+  		</label>
+      <label>
+				Building: {{department.building}}
+        
+      </label>
+  		<div>Employee list: {{department.employees}}</div>
+  		<!-- <li *ngFor ="let employee of newEmployees">
+  			{{employee}} 
+  		</li> -->
+
+  <input type="submit" class="btn" value="Edit" (click)="save()">
+	</div>
+	 <button class = "backBtn" (click)="goBack()">Back</button>
+</div>
+

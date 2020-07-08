@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+body {
+    background:#2E9CE6;
+    padding: 3em;
+    font-family: 'Raleway', 'Arial';
+    color:#fff;
+}
+ul {
+    list-style-type:none;
+    margin:0 0 2em 0;
+    padding:0;
+}
+ul li {
+    display:inline;
+    margin-right: 30px;
+}
+ul li a {
+    font-size: 1.5em;
+}
+a {
+    color:#fff;
+    text-decoration:none;
+}
+.container {
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+.col {
+    padding: .4em 1.3em;
+}
+.color-dark {
+    background: #2885C4;
+}
+.color-light {
+    background: #57B3F1;
+}
+
+input.txt {
+    border: 0;
+    padding: 1em;
+    width: 60%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+input.btn {
+    display: inline;
+    border: 0;
+    padding:1em 3em;
+    background:#A5F883;
+    color:#003A61;
+    margin:1em;
+    cursor:pointer;
+}
+.life-container {
+    background:#3FA0E1;
+    padding:.5em;
+    font-weight:bold;
+    cursor:pointer;
+}
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 20px;
+    width: 170px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  form {
+    text-align: center;
+  }
+.details{
+    padding:20px;
+    margin:10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color:#f4511e;
+   
+}
+a {
+    padding: 10px;
+}
+.backBtn{
+    display: inline;
+    border: 0;
+    padding:1em 3em;
+    background:#FA8072;
+    color:white;
+    margin:1em;
+    cursor:pointer;
+}
+.header{
+    display: inline;
+    margin-right: 20px;
+
+}
+.buttonTask {
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 17px;
+    padding: 20px;
+    width: 170px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .buttonTask span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .buttonTask span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .buttonTask:hover span {
+    padding-right: 25px;
+  }
+  
+  .buttonTask:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+

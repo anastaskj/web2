@@ -1,0 +1,106 @@
+<h1>Departments</h1>
+<input type="text" class="form-control" placeholder="Search By Name"
+            style="width:300px" [(ngModel)]="searchTerm" />
+<ul class = "departments">
+	<li *ngFor="let department of departments|departmentFilter:searchTerm">
+		<a routerLink  = "/department/{{department.id}}">
+	 
+		<button class="button" type="button">{{department.name}}</button>	
+</a>
+<button class="delete" title="delete"
+      (click)="delete(department)">x</button>
+	</li>
+</ul>
+<!-- <div>
+  <h2> Create a new department</h2>
+  <label>Department name:
+    <input #departmentName />
+  </label>
+<label>Department building:
+    <select #departmentBuilding>
+      <option>A1</option>
+      <option>A2</option>
+      <option>A3</option>
+      <option>A4</option>
+      <option>A5</option>
+    </select>
+  </label>
+ 
+  <button class = "backBtn" (click)="add(departmentName.value, departmentBuilding.value); departmentName.value=''">
+    Add
+  </button>
+</div> -->
+
+
+<form #departmentForm="ngForm" (ngSubmit)="saveDepartment()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{panelTitle}}</h3>
+    </div>
+    <!-- <div class="panel-body"> -->
+
+      <div class="form-group">
+        <label for="name" class="control-label">Department Name</label>
+        <input id="name" type="text" class="form-control" name="name"
+        [(ngModel)]="department.name">
+      </div>
+      <div class="form-group">
+        <label for="name" class="control-label">Create new Building Name</label>
+        <input id="name" type="text" class="form-control" name="name"
+        [(ngModel)]="department.building">
+      </div>
+      <div class="form-group">
+        <label for="department">Choose from existing Buildings</label>
+        <select id="department" name="department" [(ngModel)]="department.building"
+                class="form-control">
+          <option *ngFor="let department of departments" [value]="department.building">
+            {{department.building}}
+          </option>
+        </select>
+      </div>
+
+      <!-- <div class="form-group">
+          <label for="name" class="control-label">Assign Employee</label>
+          <input id="name" type="number" class="form-control" name="name"
+          [(ngModel)]="department.employees">
+        </div> -->
+
+      <div class="form-group">
+          <label for="employee">Employee</label>
+          <select id="employee" name="employee" [(ngModel)]="department.employees"
+                  class="form-control">
+            <option *ngFor="let employee of employees" [value]="employee.id">
+              {{employee.first_name}}
+            </option>
+          </select>
+        </div>
+      
+<!-- 
+      <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button [(ngModel)]="department.building" 
+            class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Building</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button class="dropdown-item">R1</button>
+              <button class="dropdown-item">R2</button>
+              <button class="dropdown-item">R3</button>
+              <button class="dropdown-item">R4</button>
+            </div>
+          </div>
+        </div>
+        </div>
+     -->
+
+      <!-- <h3>Employee</h3>
+<select [(ngModel)]="department.employees" [ngModelOptions]="{standalone: true}"><option *ngFor = "let employee of employees" >{{employee.first_name}} </option>
+</select> -->
+
+     
+
+    <div class="panel-footer">
+      <button class="btn btn-primary" type="submit" >Save</button>
+    </div>
+  </div>
+</form>
+<!-- <app-department-detail [department]="selectedDepartment"></app-department-detail> -->
